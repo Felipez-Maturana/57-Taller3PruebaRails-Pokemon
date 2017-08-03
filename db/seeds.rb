@@ -5,15 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Atrapado.delete_all
+User.delete_all
 Pokemon.delete_all
 
-p1 = Pokemon.create!(nombre: :'Bulbasaur', description: :'Grass - Poison')
-p2 = Pokemon.create!(nombre: :'Charmander', description: :'Fire')
-p3 = Pokemon.create!(nombre: :'Squirtle', description: :'Water')
-p4 = Pokemon.create!(nombre: :'Pikachu', description: :'Electric')
-p5 = Pokemon.create!(nombre: :'Geodude', description: :'Rock - Ground')
+p1 = Pokemon.create!(nombre: :'Bulbasaur', description: :'Grass - Poison', avatar: "https://img.pokemondb.net/artwork/bulbasaur.jpg")
+p2 = Pokemon.create!(nombre: :'Charmander', description: :'Fire', avatar: 'https://img.pokemondb.net/artwork/charmander.jpg')
+p3 = Pokemon.create!(nombre: :'Squirtle', description: :'Water', avatar: 'https://img.pokemondb.net/artwork/squirtle.jpg')
+p4 = Pokemon.create!(nombre: :'Pikachu', description: :'Electric', avatar: 'https://img.pokemondb.net/artwork/pikachu.jpg')
+p5 = Pokemon.create!(nombre: :'Geodude', description: :'Rock - Ground', avatar: 'https://img.pokemondb.net/artwork/geodude.jpg')
 
 
-u = User.last
-u.pokemons << Poke.first
-u.pokemons << Poke.last
+userAdmin = User.create!(email: 'admin@admin.cl', password: 'asd123', name: 'admin', role: 0)
+u = User.create!(email: 'f@f.cl', password: 'asd123', name: 'Felipe', role: 1)
+u.pokemons << Pokemon.first
+u.pokemons << Pokemon.last
