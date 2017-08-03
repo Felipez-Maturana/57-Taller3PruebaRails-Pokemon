@@ -1,4 +1,5 @@
 class CatchedController < ApplicationController
+  before_action :authenticate_user!
   def index
     @pokemons2 = current_user.atrapado
     @pokemons = current_user.pokemons

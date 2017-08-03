@@ -18,6 +18,9 @@
           
         <tr>
           <th>
+            Avatar
+          </th>
+          <th>
             Nombre
           </th>
           <th>
@@ -34,6 +37,9 @@
         <tbody>
           <% @pokemons.each do |poke| %>
             <tr>
+              <td>
+                <%= image_tag(poke.avatar, class: 'img-responsive pokeavatar')%>
+              </td>
               <td>
                 <%= poke.nombre %>
               </td>

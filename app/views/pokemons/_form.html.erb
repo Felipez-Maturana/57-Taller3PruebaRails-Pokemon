@@ -20,6 +20,11 @@
     <%= f.label :description %>
     <%= f.text_field :description %>
   </div>
+  <div class="field">  
+    <label>My Avatar</label>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>    
+  </div>
 
   <div class="actions">
     <%= f.submit %>
