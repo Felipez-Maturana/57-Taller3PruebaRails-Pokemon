@@ -5,7 +5,12 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
  
-  resources :pokemons
+  resources :pokemons do 
+    member do 
+      post 'add_pokemon', as: 'add_pokemon', to: 'pokemons#add_pokemon'
+    end
+  end
+
   resources :catched, only: [:index] do 
     member do
       post 'levelUp', as: 'levelUp', to: 'catched#levelUp'

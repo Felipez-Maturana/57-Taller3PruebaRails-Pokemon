@@ -2,27 +2,77 @@
 
 <h1>Pokemons</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
+  
 
-  <tbody>
-    <% @pokemons.each do |pokemon| %>
-      <tr>
-        <td><%= pokemon.nombre %></td>
-        <td><%= pokemon.description %></td>
-        <td><%= link_to 'Show', pokemon %></td>
-        <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
-        <td><%= link_to 'Destroy', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Pokemons</div>
+
+    <!-- Table -->
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-bordered">
+        <thead>
+          
+        <tr>
+          <th>
+            Nombre
+          </th>
+          <th>
+            Tipos
+          </th>
+          <th>
+            Agregar
+          </th>
+          <th>
+            Actions
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+          <% @pokemons.each do |poke| %>
+            <tr>
+              <td>
+                <%= poke.nombre %>
+              </td>
+              <td>
+                <%= poke.description %>
+              </td>
+              <td>
+                <%= link_to 'Agregar', add_pokemon_pokemon_path(poke) ,class: 'btn btn-success', method: :post %>
+              </td>
+              <td>
+                <%= link_to 'Show', poke, class: 'btn btn-primary' %> 
+                <%= link_to 'Edit', edit_pokemon_path(poke), class: 'btn btn-info'%>
+                <%= link_to 'Destroy', poke, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br>
 
