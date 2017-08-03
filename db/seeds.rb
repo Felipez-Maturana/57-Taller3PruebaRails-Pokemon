@@ -12,3 +12,8 @@ p2 = Pokemon.create!(nombre: :'Charmander', description: :'Fire')
 p3 = Pokemon.create!(nombre: :'Squirtle', description: :'Water')
 p4 = Pokemon.create!(nombre: :'Pikachu', description: :'Electric')
 p5 = Pokemon.create!(nombre: :'Geodude', description: :'Rock - Ground')
+
+
+u = User.last
+u.pokemons << Poke.first
+u.pokemons << Poke.last

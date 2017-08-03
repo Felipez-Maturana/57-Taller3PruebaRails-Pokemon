@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170802232508) do
+ActiveRecord::Schema.define(version: 20170803000657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "atrapados", force: :cascade do |t|
     t.integer  "pokemon_id"
-    t.integer  "level"
+    t.integer  "level",      default: 1
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.index ["pokemon_id"], name: "index_atrapados_on_pokemon_id", using: :btree
     t.index ["user_id"], name: "index_atrapados_on_user_id", using: :btree
   end

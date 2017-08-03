@@ -1,0 +1,55 @@
+<h1>Catched#index</h1>
+<p>Find me in app/views/catched/index.html.erb</p>
+<ul>
+
+
+</ul>
+
+<div class="container">
+  
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Tus pokemons</div>
+
+    <!-- Table -->
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-bordered">
+        <thead>
+          
+        <tr>
+          <th>
+            Nombre
+          </th>
+          <th>
+            Tipos
+          </th>
+          <th>
+            Nivel
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+          <% @pokemons2.each do |poke| %>
+            <tr>
+              <td>
+                <%= Pokemon.find(poke.pokemon_id).nombre %>
+              </td>
+              <td>
+                <%= Pokemon.find(poke.pokemon_id).description %>
+              </td>
+              <td>
+                <%= poke.level %>
+              </td>
+              <td>
+                <%= link_to "LVL UP!", levelUp_catched_path(poke), class: "btn btn-primary", method: :post %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
