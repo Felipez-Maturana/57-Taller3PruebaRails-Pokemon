@@ -1,6 +1,7 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Pokemons</h1>
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
 
 <div class="container">
   
@@ -40,12 +41,18 @@
                 <%= poke.description %>
               </td>
               <td>
-                <%= link_to 'Agregar', add_pokemon_pokemon_path(poke) ,class: 'btn btn-success', method: :post %>
+                <%= link_to 'Agregar', add_pokemon_pokemon_path(poke) ,class: 'btn btn-success', method: :post, data: { confirm: "Estas seguruo que deseas agregar a #{poke.nombre} a tus pokemons?", alert: 'Ha sido agregado correctamente'} %>
               </td>
               <td>
+                <% if can? :read, poke %>
                 <%= link_to 'Show', poke, class: 'btn btn-primary' %> 
+                <% end %>
+                <% if can? :edit, poke %>
                 <%= link_to 'Edit', edit_pokemon_path(poke), class: 'btn btn-info'%>
+                <% end %>
+                <% if can? :destroy, poke %>
                 <%= link_to 'Destroy', poke, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+                <% end %>
               </td>
             </tr>
           <% end %>
@@ -61,6 +68,9 @@
 
 
 
+<% if can? :create, Pokemon %>
+<%= link_to 'New Pokemon', new_pokemon_path, class: 'btn btn-primary' %> 
+<% end %>
 
 
 
@@ -75,5 +85,3 @@
 
 
 <br>
-
-<%= link_to 'New Pokemon', new_pokemon_path %>

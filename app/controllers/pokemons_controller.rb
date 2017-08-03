@@ -1,6 +1,6 @@
 class PokemonsController < ApplicationController
   before_action :set_pokemon, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
   # GET /pokemons
   # GET /pokemons.json
   def index
