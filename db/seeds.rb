@@ -9,11 +9,11 @@ Atrapado.delete_all
 User.delete_all
 Pokemon.delete_all
 
-p1 = Pokemon.create!(nombre: :'Bulbasaur', description: :'Grass - Poison', avatar: "https://img.pokemondb.net/artwork/bulbasaur.jpg")
-p2 = Pokemon.create!(nombre: :'Charmander', description: :'Fire', avatar: 'https://img.pokemondb.net/artwork/charmander.jpg')
-p3 = Pokemon.create!(nombre: :'Squirtle', description: :'Water', avatar: 'https://img.pokemondb.net/artwork/squirtle.jpg')
-p4 = Pokemon.create!(nombre: :'Pikachu', description: :'Electric', avatar: 'https://img.pokemondb.net/artwork/pikachu.jpg')
-p5 = Pokemon.create!(nombre: :'Geodude', description: :'Rock - Ground', avatar: 'https://img.pokemondb.net/artwork/geodude.jpg')
+p1 = Pokemon.create!(nombre: :'Bulbasaur', description: :'Grass - Poison', remote_avatar_url: "https://img.pokemondb.net/artwork/bulbasaur.jpg")
+p2 = Pokemon.create!(nombre: :'Charmander', description: :'Fire', remote_avatar_url: 'https://img.pokemondb.net/artwork/charmander.jpg')
+p3 = Pokemon.create!(nombre: :'Squirtle', description: :'Water', remote_avatar_url: 'https://img.pokemondb.net/artwork/squirtle.jpg')
+p4 = Pokemon.create!(nombre: :'Pikachu', description: :'Electric', remote_avatar_url: 'https://img.pokemondb.net/artwork/pikachu.jpg')
+p5 = Pokemon.create!(nombre: :'Geodude', description: :'Rock - Ground', remote_avatar_url: 'https://img.pokemondb.net/artwork/geodude.jpg')
 
 
 userAdmin = User.create!(email: 'admin@admin.cl', password: 'asd123', name: 'admin', role: 0)
